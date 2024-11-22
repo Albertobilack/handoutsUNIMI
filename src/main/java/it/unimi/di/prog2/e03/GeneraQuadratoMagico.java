@@ -20,21 +20,80 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 package it.unimi.di.prog2.e03;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-/**
- * Vedi <a
- * href="https://github.com/mapio/labprog/blob/master/esercizi/genera_quadrato_magico/Testo.md">testo</a>,
- */
 public class GeneraQuadratoMagico {
 
-  /** . */
-  private GeneraQuadratoMagico() {}
+    public static void inBasso(int[][] quadrato, List<Integer> coordinate, int numero) {
+        if (coordinate.get(1) == coordinate.get(0)-1) { //siamo nell'ultima riga
+            coordinate.set(1, 0);
+            quadrato[coordinate.get(1)][coordinate.get(2)] = numero;
+        } else {
+            coordinate.set(1, coordinate.get(1)+1);
+            quadrato[coordinate.get(1)][coordinate.get(2)] = numero;
+        }
+    }
 
-  /*- Completa il seguente main
+    public static boolean altoADestra(int[][] quadrato, List<Integer> coordinate, int numero) {
+
+        //se siamo nella prima riga, devo scrivere nell'utlima spostandomi a dx di 1
+        if (coordinate.get(1) == 0) {
+            //siamo nell'angolo in alto a dx
+            if (coordinate.get(2) == coordinate.get(0)-1) {
+                if (quadrato[coordinate.get(0)-1][coordinate.get(0)-1] == 0) {
+                    coordinate.set(1, coordinate.get(0)-1);
+                    coordinate.set(2, 0);
+                    quadrato[coordinate.get(1)][coordinate.get(2)] = numero;
+                    return true;
+                } else return false;
+            } else if (quadrato[coordinate.get(0)-1][coordinate.get(2)+1] == 0) {
+                coordinate.set(1, coordinate.get(0)-1);
+                coordinate.set(2, coordinate.get(2)+1);
+                quadrato[coordinate.get(1)][coordinate.get(2)] = numero;
+                return true;
+            } else return false;
+
+        } else if (coordinate.get(2) == coordinate.get(0)-1) { //siamo nell'ultima colonna
+            if (quadrato[coordinate.get(1)-1][0] == 0) {
+                coordinate.set(1, coordinate.get(1)-1);
+                coordinate.set(2, 0);
+                quadrato[coordinate.get(1)][coordinate.get(2)] = numero;
+                return true;
+            } else return false;
+        } else if (quadrato[coordinate.get(1)-1][coordinate.get(2)+1] == 0) {
+            coordinate.set(1, coordinate.get(1)-1);
+            coordinate.set(2, coordinate.get(2)+1);
+            quadrato[coordinate.get(1)][coordinate.get(2)] = numero;
+            return true;
+        }
+
+        return false;
+    }
 
   public static void main(String[] args) {
     final int N = Integer.parseInt(args[0]);
+    int[][] quadrato = new int[N][N];
+    int riga = 0;
+    int colonna = N/2;
+    quadrato[riga][colonna] = 1;
+    List<Integer> coordinate = new ArrayList<>(Arrays.asList(N, riga, colonna)); //accesso con list.get(), modifica con list.set
+    
+    for (int i = 2; i<=N*N; i++) {
+        boolean libero = altoADestra(quadrato, coordinate, i);
+        if (!libero) {
+            inBasso(quadrato, coordinate, i);
+        }
+    }
+
+    for (int[] rigaContenitore : quadrato) {
+        for (int numero : rigaContenitore) {
+            System.out.print(numero + " ");
+        }
+        System.out.println();
+    }
+
   }
 
-  */
 }
