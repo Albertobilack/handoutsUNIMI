@@ -30,6 +30,32 @@ public class NaveSpaziale {
   /** . */
   private NaveSpaziale() {}
 
+  public static void main(String[] args) {
+    
+    int start = Integer.parseInt(args[0]);
+    int end = Integer.parseInt(args[1]);
+    StringBuilder commands = new StringBuilder();
+
+    while (end > start) {
+      if (end < start * 4) {
+        commands.repeat('P', (end-start));
+        break;
+      }
+      else if (end%4 == 0) {
+        commands.append('S');
+        end = end/4; 
+      }
+      else {
+        commands.append('P');
+        end -= 1;
+      }
+    }
+
+    System.out.println(commands.reverse());
+
+
+  }
+
   // Se String[] args è il vettore che contiene gli argomenti sulla linea
   // di comando, potete convertire i primi due in numeri interi con le
   // dichiarazioni (e inizializzazioni) seguenti
