@@ -22,6 +22,7 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 package it.unimi.di.prog2.h05;
 
 /** Quarto esempio di astrazione per parametrizzazione. */
+//ESEMPIO DI OVERLOADING
 public class GrigliaIrregolare4 {
 
   /** . */

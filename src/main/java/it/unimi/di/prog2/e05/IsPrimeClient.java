@@ -19,6 +19,8 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 */
 
+//specify and implement a procedure isPrime that determines whether an integer is prime
+
 package it.unimi.di.prog2.e05;
 
 /** Esercizio 3.3 di PDJ. */
@@ -27,10 +29,41 @@ public class IsPrimeClient {
   /** . */
   private IsPrimeClient() {}
 
-  // Aggiunga qui un main che invochi il metodo isPrime (che può sviluppare in
-  // questa o altra classe) descritto dall'esercizio 3.3 di PDJ.
 
-  // Il main riceve un intero come parametro sulla linea di comando ed emette
-  // "true" nel flusso d'uscita se e solo se esso è primo.
+  public static void main(String[] args) {
+    
+    int length = args.length;
+    for (int i=0; i<length; i++) {
+      if (isPrime(Integer.parseInt(args[i]))) {
+        System.out.println("true");
+      }
+    }
+  }
+
+  /**
+   * The method return true if the argument is a prime number
+   *  
+   * @param input number that must be checked
+  */
+  private static boolean isPrime(int input) {
+    
+    if (input <= 1) return false;
+    if (input == 3 || input ==2) {
+      return true;
+    } else if (input % 2 == 0) {
+      return false;
+    }
+
+    double square = Math.sqrt((double) input);
+
+    for (int i=3; i<square; i+=2) {
+      if (input % i == 0) {
+        return false;
+      } 
+    }
+
+    return true;
+  }
+
 
 }

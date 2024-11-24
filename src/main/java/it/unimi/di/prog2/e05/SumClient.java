@@ -19,6 +19,8 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 */
 
+//Specify and implement a method with the header "public static int sum (int[] a) that returns the sum of the elements of a"
+
 package it.unimi.di.prog2.e05;
 
 /** Esercizio 3.2 di PDJ. */
@@ -27,10 +29,39 @@ public class SumClient {
   /** . */
   private SumClient() {}
 
-  // Aggiunga qui un main che invochi il metodo sum (che può sviluppare in
-  // questa o altra classe) descritto dall'esercizio 3.2 di PDJ.
 
-  // Il main riceve un elenco di interi come parametri sulla linea di comando e
-  // ne emette la somma nel flusso d'ingresso.
+  /**
+   * Main method of the class used to test SumClient method
+   * 
+   * REQUIRE: elements of {@code args} to be numbers
+   * 
+   * @param args contains the addends used to compute the sum, the addends must be numbers
+   */
+  public static void main(String[] args) {
+    
+    int length = args.length;
+    int[] addends = new int[length];
+    for (int i=0; i<length; i++) {
+      addends[i] = Integer.parseInt(args[i]);
+    }
+
+    System.out.println(sum(addends));
+
+  }
+
+
+  /**
+   * Compute the sum of the elements of a given array of integer.
+   * 
+   * @param a an {@code int[]} containing the {@code int} values to be summed.
+   * @return the integer value representing the sum of {@code a}.
+   */
+  public static int sum (int[] a) {
+    int sum = 0;
+    for (int value : a) {
+      sum +=value;
+    }
+    return sum;
+  }
 
 }

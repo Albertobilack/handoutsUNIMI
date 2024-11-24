@@ -20,6 +20,7 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 package it.unimi.di.prog2.e05;
+import java.util.Scanner;
 
 /** Esercizio 3.1 di PDJ. */
 public class GcdClient {
@@ -27,10 +28,50 @@ public class GcdClient {
   /** . */
   private GcdClient() {}
 
-  // Aggiunga qui un main che invochi il metodo gcd (che può sviluppare in
-  // questa o altra classe) descritto dall'esercizio 3.1 di PDJ.
+  /**
+   * Metodo principale
+   * 
+   * @param args non utilizzato
+   */
+  public static void main(String[] args) {
+    
+    try (Scanner s = new Scanner(System.in)) {
+      while (s.hasNextLine()) {
+        String[] input = s.nextLine().split(" ");
+        System.out.println(gdc(Integer.parseInt(input[0]), Integer.parseInt(input[1])));
+      }
+    }
 
-  // Il main legge dal flusso di ingresso coppie di numeri ed emette nel flusso
-  // d'uscita il loro gcd.
+  }
+
+  /**
+   * Method that calculate the greatest common divisor of two factors 
+   * 
+   * REQUIRE: None I think, should work with negative numbers and a=b, maybe could restrain a>b but idk
+   * se impongo a>b creo una procedura parziale, ma così è più specifica la procedura e meno generale, e rischio di fare (minuscola) computazione inutile
+   * EFFECTS: returns the GCD of two integers
+   * 
+   * @param factorOne self-explanatory
+   * @param factorTwo self-explanatory
+   * @return the GCD of the given factors
+   */
+  private static int gdc(int factorOne, int factorTwo) {
+    
+    if (factorOne < factorTwo) { 
+      int temp = factorOne;
+      factorOne = factorTwo;
+      factorTwo = temp;
+    }
+
+    if (factorOne < 0) factorOne = Math.abs(factorOne);
+    if (factorTwo < 0) factorTwo = Math.abs(factorTwo);
+
+    if (factorTwo == 0) {
+      return factorOne;
+    }
+    
+    return gdc(factorOne % factorTwo, factorTwo);
+
+  }
 
 }
