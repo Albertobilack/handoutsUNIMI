@@ -26,10 +26,17 @@ package it.unimi.di.prog2.e05;
 /** Esercizio 3.3 di PDJ. */
 public class IsPrimeClient {
 
-  /** . */
+  /**
+   * Private constructor to prevent instantiation
+   */
   private IsPrimeClient() {}
 
 
+  /**
+   * Main method to test the {@code isPrime} method
+   * 
+   * @param args an array of {@code String} containing the numbers that must be checked
+   */
   public static void main(String[] args) {
     
     int length = args.length;
@@ -44,6 +51,7 @@ public class IsPrimeClient {
    * The method return true if the argument is a prime number
    *  
    * @param input number that must be checked
+   * @return {@code true} if the input is a prime number, {@code false} otherwise 
   */
   private static boolean isPrime(int input) {
     
@@ -56,7 +64,7 @@ public class IsPrimeClient {
 
     double square = Math.sqrt((double) input);
 
-    for (int i=3; i<square; i+=2) {
+    for (int i=3; i<=square; i+=2) {
       if (input % i == 0) {
         return false;
       } 
