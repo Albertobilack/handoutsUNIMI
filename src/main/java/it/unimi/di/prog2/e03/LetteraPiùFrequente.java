@@ -21,11 +21,8 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e03;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.lang.String;
 import java.util.Scanner;
-import java.util.regex.PatternSyntaxException;
 
 /**
  * Vedi <a
