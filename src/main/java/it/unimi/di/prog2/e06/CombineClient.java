@@ -2,16 +2,17 @@ package it.unimi.di.prog2.e06;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
- * Esercizio 4.4 di PDJ. Combine multiplies each element of a by the sum of the
+ * Esercizio 4.4 di PDJ.
+ * Combine multiplies each element of a by the sum of the
  * elements of b; for example, if a = [1 ,2, 3] and b = [4, 5], the on return
  * a=[9, 18, 27]. What should this procedure do if a or b is null or empty? Give
  * a specification for combine that answer these questions and explain why your
  * specification is a good one.
  */
+
 public class CombineClient {
 
     /**
@@ -55,8 +56,9 @@ public class CombineClient {
      *
      * @param args not used
      * @param system.in used to read {@code A} and {@code B}
+     * @throws IllegalArgumentException if input is incorrect or scanner fails 
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalArgumentException {
 
         int[] a;
         int[] b;
@@ -64,14 +66,19 @@ public class CombineClient {
         try (Scanner s = new Scanner(System.in)) {
             a = parseInts(s.nextLine());
             b = parseInts(s.nextLine());
-        } catch (IllegalStateException e) {
-            throw new IllegalStateException();
-        } catch (NoSuchElementException e) {
-            throw new NoSuchElementException();
+        } catch (RuntimeException e) { //catch illegalstate and nosuchelement
+            throw new IllegalArgumentException("exception reading input lines on main method class CombineClient");
         }
 
-        System.out.println(java.util.Arrays.toString(a));
-        System.out.println(java.util.Arrays.toString(b));
+        try {
+            Combine.combineValues(a, b);
+        } catch (NullPointerException e) { //should not happen so maybe I can avoid it
+            throw new NullPointerException("exception calling combineValues on main method class CombineClient");
+        }
+
+        for (int value : a) {
+            System.out.println(value);
+        }
 
     }
 

@@ -1,0 +1,273 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "BoundingBox",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e03.BoundingBox",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "GeneraQuadratoMagico",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e03.GeneraQuadratoMagico",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "LetteraPiùFrequente",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e03.LetteraPiùFrequente",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "NaveSpaziale",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e04.NaveSpaziale",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "Saltapicchio",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e04.Saltapicchio",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "SommaStrana",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e04.SommaStrana",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "GcdClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e05.GcdClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "IsPrimeClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e05.IsPrimeClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "SumClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e05.SumClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "CombineClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e06.CombineClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "SearchClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e06.SearchClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "SumClient(1)",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e06.SumClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "SalveMondo",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h02.SalveMondo",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "Palindroma",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h03.Palindroma",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "SequenzeDiCaratteri",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h03.SequenzeDiCaratteri",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "GiustificaADestra",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h04.GiustificaADestra",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "UltimaRipetizione",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h04.UltimaRipetizione",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "GrigliaIrregolare1",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h05.GrigliaIrregolare1",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "GrigliaIrregolare2",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h05.GrigliaIrregolare2",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "GrigliaIrregolare3",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h05.GrigliaIrregolare3",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "GrigliaIrregolare4",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h05.GrigliaIrregolare4",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "RadiciClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h06.RadiciClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "IntSetsClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h08.IntSetsClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "IntSetsClient(1)",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h09.IntSetsClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "PolyClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h09.PolyClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "PolyClient(1)",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h10.PolyClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "SparsePolyClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h10.SparsePolyClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "PolyClient(2)",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h11.PolyClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "SparsePolyClient(1)",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h11.SparsePolyClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "PortafoglioAzionarioClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h13.PortafoglioAzionarioClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "IntSetsClient(2)",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.h14.IntSetsClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "RadiciClient(1)",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.s06.RadiciClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "PolyClient(3)",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.s09.PolyClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "SparsePolyClient(2)",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.s09.SparsePolyClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "BoundedIntQueueClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.s10.BoundedIntQueueClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "RationalNumberClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.s10.RationalNumberClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "StringToIntMapClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.s12.StringToIntMapClient",
+            "projectName": "handoutsUNIMI"
+        }
+    ]
+}
