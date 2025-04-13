@@ -8,63 +8,141 @@ import java.util.ArrayList;
  * href="https://github.com/mapio/labprog/blob/master/esercizi/somma_strana/Testo.md">testo</a>, ma
  * leggendo gli addendi dal flusso di ingresso.
  */
+
+/**
+ * test
+ */
 public class SommaStrana {
 
-  /** . */
+  /** PLACEHOLDER */
   private SommaStrana() {}
 
-  public static void main(String[] args) {
-    List<List<Integer>> numbersList = new ArrayList<>();
-    
-    try (Scanner s = new Scanner(System.in)) {
-      int i = 0;
-      while (s.hasNextLine()) {
-        numbersList.add(new ArrayList<>());
-        final char[] number = s.nextLine().toCharArray();
-        for (char digit : number) {
-          numbersList.get(i).add(digit - '0');
-        }
-        i++;
-      }
+  /**
+   * PLACEHOLDER
+   * @param numChar PLACEHOLDER
+   * @param numInt PLACEHOLDER
+   * @param maxLength PLACEHOLDER
+   */
+  private static void fillNumbers(char[] numChar, int[] numInt, int maxLength) {
+
+    int differenceLength = maxLength - numChar.length; 
+
+    for (int i = numChar.length-1; i>=0; i--) {
+      numInt[maxLength-1] = numChar[i] - '0';
+      maxLength--;
     }
 
-    //trovo lenght massima
-    int lenghtMax = 0;
-    for (List<Integer> numero : numbersList) {
-      if (numero.size() > lenghtMax) {
-        lenghtMax = numero.size();
-      }
+    for (int i=0; i<differenceLength; i++) {
+      numInt[i] = 0;
     }
-
-    //a ogni numero aggiungo tanti 0 quanto la differenza tra numeor.size e lenghtMax
-    for (List<Integer> numero : numbersList) {
-      int difference = numero.size() - lenghtMax;
-      while (difference < 0) {
-        numero.addFirst(0);
-        difference++;
-      }
-    }
-
-    int riporto = 0;
-    numbersList.add(new ArrayList<>()); //risultato
-    for (int i=lenghtMax-1; i>=0; i--) {
-      int result = numbersList.get(0).get(i) + numbersList.get(1).get(i) + riporto;
-      if (result > 9) {
-        result = 9 - (result - 10);
-        riporto = 1;
-      } else {
-        riporto = 0;
-      }
-      numbersList.get(2).addFirst(result);
-    }
-    if (riporto == 1) {
-      numbersList.get(2).addFirst(1);
-    }
-    
-    //orribile ma ci accontentiamo
-    System.out.println(numbersList.get(2).toString().replace("[", "").replace("]", "").replace(",", "").replace(" ", ""));
   }
+
+  /**
+   * PLACEHOLDER
+   * @param args test
+   */
+  public static void main(String[] args) {
+
+    char[] s1;
+    char[] s2;
+
+    try (Scanner s = new Scanner(System.in)) {
+      s1 = s.nextLine().toCharArray();
+      s2 = s.nextLine().toCharArray();
+    } catch (Exception e) {
+      throw e;
+    }
+
+    int maxLength = s1.length > s2.length? s1.length : s2.length;
+    int[] numOne = new int[maxLength];
+    int[] numTwo = new int[maxLength];
+
+    fillNumbers(s1,numOne, maxLength);
+    fillNumbers(s2, numTwo, maxLength);
+
+    boolean reminder = false;
+    for (int i=maxLength-1; i>=0; i--) {
+      numOne[i] = numOne[i] + numTwo[i];
+      if (reminder) {
+        reminder = false;
+        numOne[i]+=1;
+      }
+      if (numOne[i] >= 10) {
+        numOne[i] = 9 - (numOne[i] - 10);
+        reminder = true;
+      }
+    }
+
+    if (reminder) {
+      System.out.print('1');
+    }
+    for (int i=0; i<maxLength; i++) {
+      System.out.print(numOne[i]);
+    }
+
+  }
+
 }
+
+
+// ALTRA IMPLEMENTAZIONE
+// public class SommaStrana {
+
+//   /** . */
+//   private SommaStrana() {}
+
+//   public static void main(String[] args) {
+//     List<List<Integer>> numbersList = new ArrayList<>();
+    
+//     try (Scanner s = new Scanner(System.in)) {
+//       int i = 0;
+//       while (s.hasNextLine()) {
+//         numbersList.add(new ArrayList<>());
+//         final char[] number = s.nextLine().toCharArray();
+//         for (char digit : number) {
+//           numbersList.get(i).add(digit - '0');
+//         }
+//         i++;
+//       }
+//     }
+
+//     //trovo lenght massima
+//     int lenghtMax = 0;
+//     for (List<Integer> numero : numbersList) {
+//       if (numero.size() > lenghtMax) {
+//         lenghtMax = numero.size();
+//       }
+//     }
+
+//     //a ogni numero aggiungo tanti 0 quanto la differenza tra numeor.size e lenghtMax
+//     for (List<Integer> numero : numbersList) {
+//       int difference = numero.size() - lenghtMax;
+//       while (difference < 0) {
+//         numero.addFirst(0);
+//         difference++;
+//       }
+//     }
+
+//     int riporto = 0;
+//     numbersList.add(new ArrayList<>()); //risultato
+//     for (int i=lenghtMax-1; i>=0; i--) {
+//       int result = numbersList.get(0).get(i) + numbersList.get(1).get(i) + riporto;
+//       if (result > 9) {
+//         result = 9 - (result - 10);
+//         riporto = 1;
+//       } else {
+//         riporto = 0;
+//       }
+//       numbersList.get(2).addFirst(result);
+//     }
+//     if (riporto == 1) {
+//       numbersList.get(2).addFirst(1);
+//     }
+    
+//     //orribile ma ci accontentiamo
+//     System.out.println(numbersList.get(2).toString().replace("[", "").replace("]", "").replace(",", "").replace(" ", ""));
+//   }
+// }
 
       //ALTRA IMPLEMENTAZIONE
 

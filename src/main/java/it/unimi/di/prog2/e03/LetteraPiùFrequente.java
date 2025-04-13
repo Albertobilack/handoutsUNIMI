@@ -34,8 +34,8 @@ public class LetteraPiùFrequente {
   private LetteraPiùFrequente() {}
 
   /**
-   * 
-   * @param args
+   *  PLACEHOLDER 
+   * @param args PLACEHOLDER
    */
   public static void main(String[] args) {
     

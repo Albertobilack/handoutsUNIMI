@@ -24,8 +24,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/** PLACEHOLDER */
 public class GeneraQuadratoMagico {
 
+    /**PLACEHOLDER */
+    private GeneraQuadratoMagico() {}
+
+    /** PLACEHOLDER
+     * @param quadrato PLACEHOLDER
+     * @param coordinate PLACEHOLDER
+     * @param numero PLACEHOLDER
+     */
     public static void inBasso(int[][] quadrato, List<Integer> coordinate, int numero) {
         if (coordinate.get(1) == coordinate.get(0)-1) { //siamo nell'ultima riga
             coordinate.set(1, 0);
@@ -36,6 +45,12 @@ public class GeneraQuadratoMagico {
         }
     }
 
+    /** PLACEHOLDER
+     * @param quadrato PLACEHOLDER
+     * @param coordinate PLACEHOLDER
+     * @param numero PLACEHOLDER
+     * @return PLACEHOLDER
+     */
     public static boolean altoADestra(int[][] quadrato, List<Integer> coordinate, int numero) {
 
         //se siamo nella prima riga, devo scrivere nell'utlima spostandomi a dx di 1
@@ -72,6 +87,10 @@ public class GeneraQuadratoMagico {
         return false;
     }
 
+    /**
+     * PLACEHOLDER
+     * @param args PLACEHOLDER
+     */
   public static void main(String[] args) {
     final int N = Integer.parseInt(args[0]);
     int[][] quadrato = new int[N][N];

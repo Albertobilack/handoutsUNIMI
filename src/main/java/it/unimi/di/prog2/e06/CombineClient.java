@@ -53,9 +53,9 @@ public class CombineClient {
      * contains non-integer input, an exception is raised
      *
      * (se sono vuoti è accettabile)
+     * atparametro system.in used to read {@code A} and {@code B}
      *
      * @param args not used
-     * @param system.in used to read {@code A} and {@code B}
      * @throws IllegalArgumentException if input is incorrect or scanner fails 
      */
     public static void main(String[] args) throws IllegalArgumentException {

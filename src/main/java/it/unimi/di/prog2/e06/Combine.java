@@ -1,16 +1,19 @@
 package it.unimi.di.prog2.e06;
 
 /**
- *
+ * test
  */
 public class Combine {
+
+    /** PLACEHOLDER */
+    private Combine () {}
 
     /**
      * Modify {@code a} by multipling each of his elements by the sum of
      * elements in {@code b}
      *
-     * @param a
-     * @param b
+     * @param a PLACEHOLDER
+     * @param b PLACEHOLDER
      * @throws NullPointerException if a == {@code null} or b == {@code null}
      */
     public static void combineValues(int[] a, int[] b) throws NullPointerException {

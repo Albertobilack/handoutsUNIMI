@@ -27,34 +27,86 @@ package it.unimi.di.prog2.e04;
  */
 public class NaveSpaziale {
 
-  /** . */
+  /**  PLACEHOLDER */  
   private NaveSpaziale() {}
 
+  /** PLACEHOLDER 
+   * @param args PLACEHOLDER
+  */
   public static void main(String[] args) {
     
-    int start = Integer.parseInt(args[0]);
-    int end = Integer.parseInt(args[1]);
-    StringBuilder commands = new StringBuilder();
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
+    StringBuilder sequence = new StringBuilder();
 
-    while (end > start) {
-      if (end < start * 4) {
-        commands.repeat('P', (end-start));
-        break;
+    while(b>a) {
+      while((b%4 != 0 || b/4<a) && b!=a) {
+        sequence.append('P');
+        b-=1;
       }
-      else if (end%4 == 0) {
-        commands.append('S');
-        end = end/4; 
-      }
-      else {
-        commands.append('P');
-        end -= 1;
+      if (b/4>=a) {
+        sequence.append('S');
+        b/=4;
       }
     }
 
-    System.out.println(commands.reverse());
 
+
+    // while(b/4 > a) {
+    //   sequence.append('S');
+    //   b/=4;
+    // }
+    
+    // while(a!=b) {
+    //   sequence.append('P');
+    //   a+=1;
+    // }
+
+    System.out.println(sequence.reverse());
 
   }
+
+}
+
+
+
+
+
+
+
+
+
+
+//public class NaveSpaziale {
+//
+//  /** . */
+//  private NaveSpaziale() {}
+//
+//  public static void main(String[] args) {
+//    
+//    int start = Integer.parseInt(args[0]);
+//    int end = Integer.parseInt(args[1]);
+//    StringBuilder commands = new StringBuilder();
+//
+//    while (end > start) {
+//      if (end < start * 4) {
+//        commands.repeat('P', (end-start));
+//        break;
+//      }
+//      else if (end%4 == 0) {
+//        commands.append('S');
+//        end = end/4; 
+//      }
+//      else {
+//        commands.append('P');
+//        end -= 1;
+//      }
+//    }
+//
+//    System.out.println(commands.reverse());
+//
+//
+//  }
 
   // Se String[] args è il vettore che contiene gli argomenti sulla linea
   // di comando, potete convertire i primi due in numeri interi con le
@@ -65,4 +117,4 @@ public class NaveSpaziale {
   //
   // non c'è bisogno di importare alcun package per poter usare Integer.
 
-}
+//}

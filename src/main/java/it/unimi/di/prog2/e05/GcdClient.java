@@ -1,77 +1,101 @@
-/*
-
-Copyright 2024 Massimo Santini
-
-This file is part of "Programmazione 2 @ UniMI" teaching material.
-
-This is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This material is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this file.  If not, see <https://www.gnu.org/licenses/>.
-
-*/
-
 package it.unimi.di.prog2.e05;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.IOException;
+import java.util.List;
 
-/** Esercizio 3.1 di PDJ. */
-public class GcdClient {
+/** Esercizio 3.1 di PDJ.
+ * computing the greatest commond divisor by repeated subtraction is not very efficient.
+ * reimplement gcd to use division instead
+ */
+public class GcdClient{
 
-  /** . */
+  /** costruttore privato perché classe utility*/
   private GcdClient() {}
 
   /**
-   * Metodo principale
+   * calcola il massimo comune divisore (gcd = greatest common divisor).
    * 
-   * @param args non utilizzato
+   * <p> legge una sequenza di coppie di {@code int} dal flusso in ingresso {@code System.in} e per ogni coppia emette il gcd in flusso d'uscita {@code System.out}
+   *
+   * @param args non usato.
+   * @throws IOException se lettura flusso ingresso fallisce o input contiene numero dispari di argomenti
    */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     
-    try (Scanner s = new Scanner(System.in)) {
-      while (s.hasNextLine()) {
-        String[] input = s.nextLine().split(" ");
-        System.out.println(gdc(Integer.parseInt(input[0]), Integer.parseInt(input[1])));
+    List<Integer> a = new ArrayList<>();
+    List<Integer> b = new ArrayList<>();
+    try(Scanner s = new Scanner(System.in)) {
+      while (s.hasNextInt()) {
+        a.add(s.nextInt());
+        b.add(s.nextInt());
       }
+    } catch (Exception e) {
+      throw new IOException(e);
+    }
+
+    for(int i=0; i<a.size(); i++) {
+      System.out.println(Gcd.generateGdc(a.get(i), b.get(i)));
     }
 
   }
 
-  /**
-   * Method that calculate the greatest common divisor of two factors 
-   * 
-   * REQUIRE: None I think, should work with negative numbers and a=b, maybe could restrain a>b but idk
-   * se impongo a>b creo una procedura parziale, ma così è più specifica la procedura e meno generale, e rischio di fare (minuscola) computazione inutile
-   * EFFECTS: returns the GCD of two integers
-   * 
-   * @param factorOne self-explanatory
-   * @param factorTwo self-explanatory
-   * @return the GCD of the given factors
-   */
-  private static int gdc(int factorOne, int factorTwo) {
-    
-    if (factorOne < factorTwo) { 
-      int temp = factorOne;
-      factorOne = factorTwo;
-      factorTwo = temp;
-    }
 
-    if (factorOne < 0) factorOne = Math.abs(factorOne);
-    if (factorTwo < 0) factorTwo = Math.abs(factorTwo);
-
-    if (factorTwo == 0) {
-      return factorOne;
-    }
-    
-    return gdc(factorOne % factorTwo, factorTwo);
-
-  }
 
 }
+
+
+
+
+//public class GcdClient {
+//
+//  /** . */
+//  private GcdClient() {}
+//
+//  /**
+//   * Metodo principale
+//   * 
+//   * @param args non utilizzato
+//   */
+//  public static void main(String[] args) {
+//    
+//    try (Scanner s = new Scanner(System.in)) {
+//      while (s.hasNextLine()) {
+//        String[] input = s.nextLine().split(" ");
+//        System.out.println(gdc(Integer.parseInt(input[0]), Integer.parseInt(input[1])));
+//      }
+//    }
+//
+//  }
+//
+//  /**
+//   * Method that calculate the greatest common divisor of two factors 
+//   * 
+//   * REQUIRE: None I think, should work with negative numbers and a=b, maybe could restrain a>b but idk
+//   * se impongo a>b creo una procedura parziale, ma così è più specifica la procedura e meno generale, e rischio di fare (minuscola) computazione inutile
+//   * EFFECTS: returns the GCD of two integers
+//   * 
+//   * @param factorOne self-explanatory
+//   * @param factorTwo self-explanatory
+//   * @return the GCD of the given factors
+//   */
+//  private static int gdc(int factorOne, int factorTwo) {
+//    
+//    if (factorOne < factorTwo) { 
+//      int temp = factorOne;
+//      factorOne = factorTwo;
+//      factorTwo = temp;
+//    }
+//
+//    if (factorOne < 0) factorOne = Math.abs(factorOne);
+//    if (factorTwo < 0) factorTwo = Math.abs(factorTwo);
+//
+//    if (factorTwo == 0) {
+//      return factorOne;
+//    }
+//    
+//    return gdc(factorOne % factorTwo, factorTwo);
+//
+//  }
+//
+//}

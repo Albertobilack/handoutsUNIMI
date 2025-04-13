@@ -1,10 +1,16 @@
 package it.unimi.di.prog2.e06;
 
 //mi aspetto che user controlli se sequenza è sortata, è un erorre evitabile e gestibile
+/**PLACEHOLDER */
 public class SequenceNotSorted extends RuntimeException {
+    /**PLACEHOLDER */
     private static final long serialVersionUID = 1L;
 
+    /** PLACEHOLDER */
     public SequenceNotSorted() {super();}
+    /** PLACEHOLDER
+     * @param s PLACEHOLDER
+     */
     public SequenceNotSorted(String s) {super(s);}
 
 }
