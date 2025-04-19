@@ -20,6 +20,7 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 package it.unimi.di.prog2.e09;
+import java.util.Scanner;
 
 /** A class to test some methods of {@link SparsePoly}. */
 public class SparsePolyClient {
@@ -38,8 +39,6 @@ public class SparsePolyClient {
    * @param args not used.
    */
 
-  /*- Uncomment the main method once you have implemented the SparsePoly class
-
   public static void main(String[] args) {
     SparsePoly result = new SparsePoly(1, 1).add(new SparsePoly(-1, 0));
     try (Scanner s = new Scanner(System.in)) {
@@ -51,5 +50,4 @@ public class SparsePolyClient {
     }
   }
 
-  */
 }

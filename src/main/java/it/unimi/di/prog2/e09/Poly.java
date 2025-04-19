@@ -117,8 +117,22 @@ public class Poly { // we don't extend Cloneable, see EJ 3.13
    * @throws NullPointerException if {@code q} is {@code null}.
    */
   public Poly add(Poly q) throws NullPointerException {
-    return null; // add missing implementation
-  }
+    if (q == null) {throw new NullPointerException("the polynomial to be added cannot be null");}
+    if (q.deg == 0 && q.terms[0] == 0) { return this; }       // or return a copy if needed, since Polys are immutable 
+    if (deg == 0 && terms[0] == 0) { return q; }
+    int minDegree = deg <= q.deg ? deg : q.deg;
+    Poly bigger = deg >= q.deg ? this : q;
+    Poly r = new Poly(bigger.deg);
+
+    for (int i = 0; i <= minDegree; i++) {
+      r.terms[i] = this.terms[i] + q.terms[i];
+    }
+    for (int i = minDegree + 1; i <= bigger.deg; i++) {
+      r.terms[i] = bigger.terms[i];
+    }
+    return r;
+
+    }
 
   /**
    * Performs polynomial multiplication.

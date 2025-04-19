@@ -30,12 +30,10 @@ public class CombineClient {
      * 
      * <p> at least one integer must be provided for b. 
      * read two rows, row 1 must contains elements of a, row 2 must contains elements of b
-     * 
-     * 
+     *  
      * @param args not used
-     * throws IllegalArgumentException if {@code system.in} contains input != integer
-     * throws IllegalArgumentException if no arguments are given for b
-     * throws 
+     * @throws IllegalArgumentException if {@code system.in} contains input != integer
+     * @throws IllegalArgumentException if no arguments are given for b
      */
     public static void main(String[] args) throws IllegalArgumentException{
 
@@ -48,7 +46,7 @@ public class CombineClient {
             containerA = s.nextLine();
             containerB= s.nextLine();
         } catch (IllegalStateException e) {
-            throw new IllegalStateException(); //da cambiare non ricordo exception che lancia lo scanner
+            throw new IllegalStateException("CombineClient.main");
         }
 
         try {
