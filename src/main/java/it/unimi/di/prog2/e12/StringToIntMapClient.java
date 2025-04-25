@@ -20,6 +20,7 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 package it.unimi.di.prog2.e12;
+import java.util.Scanner;
 
 /** A class to exercise some methods of {@link StringToIntMap}. */
 public class StringToIntMapClient {
@@ -47,8 +48,6 @@ public class StringToIntMapClient {
    * @param args not used.
    */
 
-  /*- Uncomment the following code once you have implemented the StringToIntMap class.
-
   public static void main(String[] args) {
     StringToIntMap map = new StringToIntMap();
     try (Scanner s = new Scanner(System.in)) {
@@ -75,5 +74,4 @@ public class StringToIntMapClient {
     }
   }
 
-  */
 }
