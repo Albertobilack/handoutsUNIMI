@@ -271,4 +271,26 @@ public class SparsePoly {
     r.terms.sort(Comparator.comparingInt(t -> t.degree())); //per sicurezza
     return r;
   }
+
+
+  // @Override
+  // public boolean equals(Object x) {
+  //   if (x == this) return true;
+  //   if (!(x instanceof SparsePoly)) return false;
+  //   SparsePoly y = (SparsePoly) x;
+  //   if (y.degree() != degree()) return false; //controllo degree
+  //   for (Term t : terms) if (y.coeff(t.degree) != t.coeff) return false;
+  //   for (Term t : y.terms) if (this.coeff(t.degree) != t.coeff) return false;
+  //   return true;
+  // }
+
+  // @Override
+  // public int hashCode() {
+  //   return terms.hashCode();
+  // }
+
+  // @Override
+  // public String toString() {
+    
+  // }
 }
