@@ -156,7 +156,7 @@ public class IntSet implements Iterable<Integer> {
 
   @Override
   public int hashCode() {
-    els.sort(null); // benevolent side effect
+    els.sort(null); // benevolent side effect, serve necessariamente per avere hashCode fedele a equals
     return Objects.hash(els.size(), els);
   }
 
@@ -166,9 +166,12 @@ public class IntSet implements Iterable<Integer> {
     return "IntSet: {" + lst.substring(1, lst.length() - 1) + "}";
   }
 
-  @Override
+  @Override //non necessario override ma consigliato
+  //dovrebbe essere documentato o forse no perché qua facciamo implement iterable
   public Iterator<Integer> iterator() {
-    return new IntGenerator(els);
+    return new IntGenerator(els); //standalone generator perché non serve acceda a metodi o variabli di istanza
+    //o meglio, accede a els ma per riferimento quindi copia non expensive, ma esponiamo rappresentazione
+    // we expose the representation to an external class, tuttavia permette riutilizo dell'iteratore da altre classi
   }
 
   /**

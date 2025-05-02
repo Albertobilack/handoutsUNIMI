@@ -69,6 +69,7 @@ public class DecimalDigitsIG {
     public boolean hasNext() {
       while (remaining != 0 && remaining % 10 == 0) remaining /= 10;
       return remaining != 0;
+
     }
 
     @Override

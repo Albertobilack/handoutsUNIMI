@@ -21,10 +21,12 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e15;
 
+import java.util.EmptyStackException;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /** Utility class with some string iterators. */
-public class StringIterators {
+public class StringIterators{
 
   /** . */
   private StringIterators() {}
@@ -35,19 +37,59 @@ public class StringIterators {
    * @param it an iterator of strings.
    * @return an iterator that returns the even-positioned strings of {@code it}.
    */
+  // public static Iterator<String> evenIterator(final Iterator<String> it) {
+  //   //anonymous class quindi automaticamente estende Iterator
+  //   return new Iterator<>() {
+
+  //     @Override
+  //     public boolean hasNext() {
+  //       return it.hasNext();
+  //     }
+
+  //     @Override
+  //     public String next() {
+  //       String temp = it.next();
+  //       if (it.hasNext()) {
+  //         it.next();
+  //       }
+  //       return temp;
+  //     }
+  //   };
+  // }
+
+  /**
+   * Filters even-length strings.
+   *
+   * @param it an iterator of strings.
+   * @return an iterator that returns the strings of even length of {@code it}
+   */
   public static Iterator<String> evenIterator(final Iterator<String> it) {
+    //anonymous class quindi automaticamente estende Iterator
     return new Iterator<>() {
 
-      // EXERCISE: complete the implementation
+      private String save;
 
       @Override
       public boolean hasNext() {
-        throw new UnsupportedOperationException("Unimplemented method 'hasNext'");
+        if (save != null) return true;
+        while (it.hasNext()) {
+          String temp = it.next();
+          if (temp.length() % 2 == 0) {
+            save = temp;
+            return true;
+          }
+        }
+        return false;
       }
 
       @Override
       public String next() {
-        throw new UnsupportedOperationException("Unimplemented method 'next'");
+        if (!hasNext()) {
+          throw new NoSuchElementException();
+        }
+        String result = save;
+        save = null;
+        return result;
       }
     };
   }
@@ -61,16 +103,14 @@ public class StringIterators {
   public static Iterator<String> uppercase(final Iterator<String> it) {
     return new Iterator<>() {
 
-      // EXERCISE: complete the implementation
-
       @Override
       public boolean hasNext() {
-        throw new UnsupportedOperationException("Unimplemented method 'hasNext'");
+        return it.hasNext();
       }
 
       @Override
       public String next() {
-        throw new UnsupportedOperationException("Unimplemented method 'next'");
+        return it.next().toUpperCase();
       }
     };
   }

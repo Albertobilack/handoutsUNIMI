@@ -61,7 +61,7 @@ public class DecimalDigitsEG {
    * @return the generator.
    */
   public Iterator<Integer> nonZeroDigits() {
-    // we expose the representation to an external class
+    // we expose the representation to an external class, tuttavia permette riutilizo dell'iteratore da altre classi
     return new NonZeroDigitsGenerator(number);
   }
 }

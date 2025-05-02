@@ -66,8 +66,8 @@ public class StringToIntMap {
   //
   // AF: AF(map) = {Term(key, value), Term(key, value), Term(key, value)}
   //
-  // IR: Term cannot have duplicates values in map.key && map != null && map must
-  // not contain null values
+  // IR: map cannot have duplicates values as key, && map != null && map must
+  // not contain null values 
   //
 
   /** Creates a new empty map. */

@@ -50,6 +50,9 @@ public class DecimalDigitsAG {
    */
   public Iterator<Integer> nonZeroDigits() {
     // no need to pass any value, nor to define any named class
+    //non aggiungiamo implements Iterator<T> perché è anonima
+    //Perché non si scrive implements in una anonymous class?
+    //Perché la sintassi stessa della classe anonima già include l’interfaccia o la classe astratta che stai implementando o estendendo
     return new Iterator<Integer>() {
 
       /** The remaining digits to return (except possibly for the trailing zeroes). */

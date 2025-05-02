@@ -20,6 +20,7 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 package it.unimi.di.prog2.e15;
+import java.util.Scanner;
 
 /** A class to test int ranges. */
 public class IntRangeClient {
@@ -52,23 +53,21 @@ public class IntRangeClient {
    * @param args not used.
    */
 
-  /*- Uncomment and complete once you have implemented the range class
-
     public static void main(String[] args) {
-      // declare the range...
+      IntRange x = new IntRange(Integer.MIN_VALUE, Integer.MAX_VALUE, 1);
       try (Scanner sc = new Scanner(System.in)) {
         while (sc.hasNext()) {
           char command = sc.next().charAt(0);
           int value = sc.nextInt();
           switch (command) {
             case 'F':
-              // set the from the range
+              x.setFrom(value);
               break;
             case 'T':
-              // set the to the range
+              x.setTo(value);
               break;
             case 'S':
-              // set the step the range
+              x.setStep(value);
               break;
             default:
               throw new IllegalArgumentException("Unknown command: " + command);
@@ -76,10 +75,12 @@ public class IntRangeClient {
         }
       }
       int iterations = 0, first = 0, last = 0;
-      // complete...
+      for (int numero : x) {
+        if (iterations == 0) first = numero;
+        iterations++;
+        last = numero;
+      }
       System.out.println(
           iterations + (iterations > 0 ? " " + first : "") + (iterations > 1 ? " " + last : ""));
     }
-
-  */
 }
