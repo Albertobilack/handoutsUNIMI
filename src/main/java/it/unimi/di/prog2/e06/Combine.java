@@ -15,6 +15,7 @@ public class Combine {
      * 
      * @param container contains the numbers whom sum must be computed
      * @throws IllegalArgumentException if {@code container} is empty
+     * @return sum of the elements of {@code container}
      */
     public static int sumList(List<Integer> container) throws IllegalArgumentException {
 
@@ -38,9 +39,9 @@ public class Combine {
      * <p> the returned list will have the same order as {@code container}.
      * returns an empty list if {@code container} is empty
      * 
-     * @param containers contains elements that must be multiplied with {@code multip}    
+     * @param container contains elements that must be multiplied with {@code multip}    
      * @param multip the multiplier
-     * 
+     * @return .
      */
     public static List<Integer> multiplyList(List<Integer> container, int multip) {
         

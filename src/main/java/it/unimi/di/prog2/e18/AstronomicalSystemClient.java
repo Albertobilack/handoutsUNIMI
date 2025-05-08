@@ -20,6 +20,7 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 package it.unimi.di.prog2.e18;
+import java.util.Scanner;
 
 /**
  * Allows verification of the behavior of an astronomical system.
@@ -40,11 +41,21 @@ public class AstronomicalSystemClient {
    *
    * @param args the number of simulation steps.
    */
-
-  /* - uncomment and provide the implementation
-
   public static void main(String[] args) {
+    try (Scanner s = new Scanner(System.in)) {
+      while (s.hasNextLine()) {
+        char celestialBodyType = s.next().charAt(0); //S or P
+        String nameCelestialBody = s.next();
+        int x = s.nextInt();
+        int y = s.nextInt();
+        int z = s.nextInt();
+      }
+    }
+    //popolo sistema
+    //evolvo sistema
+    //printo corpi celesti in ordine alfabetico + psoizione + velocità
+    //printo energia totale sistema
   }
 
-  */
+
 }

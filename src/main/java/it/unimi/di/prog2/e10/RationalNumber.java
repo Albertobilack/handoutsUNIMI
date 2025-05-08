@@ -33,7 +33,9 @@ public class RationalNumber {
   // equals, hashCode, and toString methods); add methods that are adequate to
   // the specification.
 
+  /** . */
   private final int numerator;
+  /** . */
   private final int denominator;
 
 

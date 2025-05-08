@@ -10,8 +10,8 @@ public class Gcd {
     /** 
      * calcola il Gdc di due numeri.
      * 
-     * @param firstNum
-     * @param secondNum
+     * @param firstNum .
+     * @param secondNum .
      * @return il massimo comune divisore di {@code firstNum} e {@code secondNum}
      * 
      */

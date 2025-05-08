@@ -14,8 +14,11 @@ import java.util.NoSuchElementException;
 public class IntRange implements Iterable<Integer> {
 
     //instace variables
+    /** . */
     private int from;
+    /** . */
     private int to;
+    /** . */
     private int step;
 
     //AF(from, to, step) = ogni numero intero, a partire da "from" incluso fino a "to" escluso,
@@ -43,8 +46,8 @@ public class IntRange implements Iterable<Integer> {
      * @param from l'inizio del range
      * @param to la fine del range
      * @param step la distanza tra i numeri del range
-     * @throws IllegalArgumentException se {@code from} < {@code to} && step < 0
-     * @throws IllegalArgumentExceptionm se {@code from} > {@code to} && step > 0
+     * @throws IllegalArgumentException se {@code from} &lt; {@code to} &amp;&amp; step &lt; 0
+     * @throws IllegalArgumentException se {@code from} &gt; {@code to} &amp;&amp; step &gt; 0
      */
     public IntRange(int from, int to, int step) throws IllegalArgumentException {
         //if (from < to && step < 0) throw new IllegalArgumentException("IntRange.IntRange"); 
@@ -94,8 +97,8 @@ public class IntRange implements Iterable<Integer> {
      * modifies {@code this} replacing {@code this.from}
      * 
      * @param fromNew the new {@code this.from} 
-     * @throws IllegalArgumentException if {@code fromNew} > {@code this.to} && step > 0
-     * @throws IllegalArgumentException se {@code fromNew} < {@code this.to} && step < 0
+     * @throws IllegalArgumentException if {@code fromNew} &gt; {@code this.to} &amp;&amp; &gt; 0
+     * @throws IllegalArgumentException se {@code fromNew} &lt; {@code this.to} &amp;&amp; step &lt; 0
      * 
      */
     public void setFrom(int fromNew) throws IllegalArgumentException {
@@ -108,9 +111,9 @@ public class IntRange implements Iterable<Integer> {
     /**
      * modifies {@code this} replacing {@code this.to}
      * 
-     * @param toNew the new {@code this.to} 
-     * @throws IllegalArgumentException if {@code this.from} > {@code newTo} && step > 0
-     * @throws IllegalArgumentException se {@code this.from} < {@code newTo} && step < 0
+     * @param newTo the new {@code this.to} 
+     * @throws IllegalArgumentException if {@code this.from} &gt; {@code newTo} &amp;&amp; step &gt; 0
+     * @throws IllegalArgumentException se {@code this.from} &lt; {@code newTo} &amp;&amp; step &lt; 0
      */
     public void setTo(int newTo) {
         //if (from < newTo && step < 0) throw new IllegalArgumentException("IntRange.setFrom"); 
@@ -123,8 +126,8 @@ public class IntRange implements Iterable<Integer> {
      * modifies {@code this} replacing {@code this.step}
      * 
      * @param newStep the new {@code this.step}
-     * @throws IllegalArgumentException if {@code from} > {@code newTo} && newStep > 0
-     * @throws IllegalArgumentException se {@code from} < {@code newTo} && newStep < 0     
+     * @throws IllegalArgumentException if {@code from} &gt; {@code newTo} &amp;&amp; newStep &gt; 0
+     * @throws IllegalArgumentException se {@code from} &lt; {@code newTo} &amp;&amp; newStep &lt; 0     
      */
     public void setStep(int newStep) throws IllegalArgumentException {
         //if (from < to && newStep < 0) throw new IllegalArgumentException("IntRange.setFrom"); 

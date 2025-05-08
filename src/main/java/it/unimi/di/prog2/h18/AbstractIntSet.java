@@ -31,8 +31,12 @@ import java.util.StringJoiner;
  */
 public abstract class AbstractIntSet implements Iterable<Integer> {
 
+  //dichiarando implements Iterable<Integer> forziamo le sottoclassi a implementarlo
+  //per essere concrete
+
   /** The elements of the set. */
   protected int size;
+  //protected non ci invalida IR?
 
   /*-
    * AF(size) -> a set with size elements.

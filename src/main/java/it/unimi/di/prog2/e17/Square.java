@@ -33,6 +33,9 @@ public class Square extends Rectangle {
     Finish the implementation of the class.
   */
 
+  // AF() = AF(Rectangle)
+  // IR of the superclass && this.base == this.height
+
   /**
    * Creates a rectangle of given base and height.
    *
@@ -41,4 +44,38 @@ public class Square extends Rectangle {
   public Square(final int base) {
     super(base, base);
   }
+
+
+  @Override
+  public void base(int base) {
+    if (base <= 0) throw new IllegalArgumentException("Rectangle.base, param base value: " + Integer.toString(base));
+    super.base(base);
+    super.height(base);
+    //posso accedere alla rep o devo usare i metodi? è priv quindi devo usare i metodi
+    assert repOk();
+  }
+
+
+  @Override
+  public void height(int height) {
+    //base(height);
+    if (height <= 0) throw new IllegalArgumentException("Rectangle.height, param height value: "+ Integer.toString(height));
+    super.height(height);
+    super.base(height);
+    assert repOk();
+  }
+
+  /**
+   * An implementation of the RI.
+   *
+   * @return whether the RI is satisfied.
+   */
+  private boolean repOk() {
+    if (super.base() <= 0 || super.height() <=0) return false;
+    if (super.base() != super.height()) return false;
+    return true;
+  }
+
+  
+
 }

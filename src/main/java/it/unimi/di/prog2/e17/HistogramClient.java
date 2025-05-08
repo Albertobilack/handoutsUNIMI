@@ -20,6 +20,7 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 package it.unimi.di.prog2.e17;
+import java.util.Scanner;
 
 /** A class to test {@link Histogram}. */
 public class HistogramClient {
@@ -53,6 +54,7 @@ public class HistogramClient {
     - implement the square class,
     - replace new Rectangle(size, size) with new Square(size) in the following code,
     - run the tests again.
+    */
 
   public static void main(String[] args) {
     Histogram histogram = new Histogram();
@@ -60,7 +62,8 @@ public class HistogramClient {
     try (Scanner sc = new Scanner(System.in)) {
       while (sc.hasNextInt()) {
         final int size = sc.nextInt();
-        final Rectangle rectangle = new Rectangle(size, size);
+        // final Rectangle rectangle = new Rectangle(size, size);
+        final Rectangle rectangle = new Square(size);
         if (firstRectangle == null) firstRectangle = rectangle;
         histogram.add(rectangle);
       }
@@ -69,5 +72,4 @@ public class HistogramClient {
     histogram.changeBase(firstRectangle, firstRectangle.base() * 2);
     for (Rectangle rectangle : histogram) System.out.println(rectangle.height());
   }
-  */
 }

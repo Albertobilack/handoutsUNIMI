@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "HistogramClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.s17.HistogramClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
+            "name": "HistogramClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e17.HistogramClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

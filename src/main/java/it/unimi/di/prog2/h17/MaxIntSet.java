@@ -58,6 +58,11 @@ public class MaxIntSet extends IntSet {
     biggest = Integer.MIN_VALUE;
     for (int z : this) if (z > biggest) biggest = z;
   }
+  //In this setup:
+  //- The private data remains encapsulated.
+  //- The public iterator method provides controlled access to the data.
+  //- The enhanced for-loop in your MaxIntSet.java file uses this iterator to iterate over the elements.
+  //This approach adheres to the principle of encapsulation by not exposing private data directly, yet still allows operations like finding the maximum integer.
 
   /**
    * Returns the maximum value in the set, or raises {@link EmptyException} otherwise.

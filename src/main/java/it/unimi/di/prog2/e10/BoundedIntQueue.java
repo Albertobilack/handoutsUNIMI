@@ -49,7 +49,7 @@ public class BoundedIntQueue{
   private int write;
   /**the elements in the queue */
   private int[] queue;
-  /**{@code (maxLength-1) is the max number of elements the queue can have*/
+  /** {@code (maxLength-1)} is the max number of elements the queue can have*/
   private int maxLength;
 
   /**

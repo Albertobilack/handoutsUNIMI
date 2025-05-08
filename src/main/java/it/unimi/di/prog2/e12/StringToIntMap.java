@@ -38,8 +38,14 @@ import java.util.List;
  */
 public class StringToIntMap {
 
+  /** . */
   private List<Term> map;
 
+  /**
+   * jdfssadj kls
+   *  @param key .
+   * @param value .
+   */
   public record Term(String key, int value) {
 
     // AF(key, value) = key -> value
