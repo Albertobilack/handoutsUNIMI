@@ -71,10 +71,12 @@ public record Point(int x, int y, int z) {
   }
 
   /**
-   * Returns a point with coordinates -1, 0, or 1 depending on the sign of the coordinates of this
+   * Returns a point with coordinates -1, 0, or 1 depending on the sign of the
+   * coordinates of this
    * point.
    *
-   * @return a point with coordinates representing the sign of this point's coordinates.
+   * @return a point with coordinates representing the sign of this point's
+   *         coordinates.
    */
   public Point signum() {
     return new Point((int) Math.signum(x), (int) Math.signum(y), (int) Math.signum(z));
