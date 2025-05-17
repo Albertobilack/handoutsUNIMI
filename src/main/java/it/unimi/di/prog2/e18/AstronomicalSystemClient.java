@@ -42,6 +42,7 @@ public class AstronomicalSystemClient {
    * @param args the number of simulation steps.
    */
   public static void main(String[] args) {
+    AstronomicalSystem sys = new AstronomicalSystem();
     try (Scanner s = new Scanner(System.in)) {
       while (s.hasNextLine()) {
         char celestialBodyType = s.next().charAt(0); //S or P
@@ -49,12 +50,18 @@ public class AstronomicalSystemClient {
         int x = s.nextInt();
         int y = s.nextInt();
         int z = s.nextInt();
+        //questo blocco di codice non andrebbe qua dovremmo snellire più possibile il try e ridurre scope del catch
+        if (celestialBodyType == 'S') sys.createBody(new Star(nameCelestialBody, new Point(x, y, z)));
+        if (celestialBodyType == 'P') sys.createBody(new Planet(nameCelestialBody, new Point(x, y, z), new Point(0, 0, 0)));
       }
     }
-    //popolo sistema
-    //evolvo sistema
+    for (int i = 0, j = Integer.parseInt(args[0]); i<j; i++) {
+      sys.step();
+    }
+    
     //printo corpi celesti in ordine alfabetico + psoizione + velocità
-    //printo energia totale sistema
+    
+    System.out.println("Total Energy: " + Integer.toString(sys.getTotalEnergy()));
   }
 
 

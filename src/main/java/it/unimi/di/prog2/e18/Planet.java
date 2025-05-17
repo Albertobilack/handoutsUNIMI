@@ -44,7 +44,7 @@ public class Planet extends CelestialBody {
      * 
      * @throws NullPointerException if {@code other} is null
      */
-    public void recalculateVelocity(Planet other) throws NullPointerException {
+    public void recalculateVelocity(CelestialBody other) throws NullPointerException {
         Objects.requireNonNull(other);
         Point thisPosition = this.getPosition();
         Point otherPosition = other.getPosition();
@@ -77,6 +77,21 @@ public class Planet extends CelestialBody {
         Point newPosition = new Point(currentVelocity.getX() + currentPosition.getX(),
                 currentVelocity.getY() + currentPosition.getY(), currentVelocity.getZ() + currentPosition.getZ());
         this.setPosition(newPosition);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder("Planet, name: " + getName() + ", pos: ");
+        Point tempPoint = this.getPosition();
+        str.append(tempPoint.toString() + " vel: ");
+        tempPoint = getVelocity();
+        str.append(tempPoint.toString());
+        return str.toString();
+    }
+
+    @Override
+    public CelestialBody copy() {
+        return new Planet(getName(), getPosition(), getVelocity());
     }
 
 }

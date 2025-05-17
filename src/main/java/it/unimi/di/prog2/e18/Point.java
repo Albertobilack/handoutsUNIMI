@@ -127,7 +127,7 @@ public class Point {
 
     @Override
     public String toString() {
-        throw new UnsupportedOperationException();
+        return "(" + Integer.toString(x) + ", " + Integer.toString(y) + ", " + Integer.toString(z) + ")";
     }
 
 }

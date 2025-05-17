@@ -3,7 +3,6 @@ package it.unimi.di.prog2.e18;
 import java.util.Objects;
 
 import javax.naming.OperationNotSupportedException;
-
 /**
  * a planet extends celestialBody removing the possibility to
  * update his position and velocity. a star is an immutable object
@@ -42,7 +41,7 @@ public class Star extends CelestialBody {
      */
     @Override
     public void setPosition(Point newPos) throws NullPointerException {
-        throws new OperationNotSupportedException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -52,7 +51,20 @@ public class Star extends CelestialBody {
      */
     @Override
     public void setVelocity(Point newVel) throws NullPointerException {
-        throws new OperationNotSupportedException();
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder("Star, name: " + getName() + ", pos: ");
+        Point tempPoint = this.getPosition();
+        str.append(tempPoint.toString());
+        return str.toString();
+    }
+
+    @Override
+    public CelestialBody copy() {
+        return new Star(getName(), getPosition());
     }
 
 }

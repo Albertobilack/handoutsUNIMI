@@ -75,9 +75,12 @@ public abstract class CelestialBody {
      * @param newPos the new positoin
      * @throws NullPointerException if {@code newPos} is null
      */
+    //potevano essere abstract probabilmente, o private / package visible? 
     public void setPosition(Point newPos) throws NullPointerException {
         this.position = newPos;
     }
+
+    //setposition potrebbe essere private e chiamato da setVelocity
 
     /**
      * update the velocity of this
@@ -88,6 +91,7 @@ public abstract class CelestialBody {
      * @param newVel the new velocity
      * @throws NullPointerException if {@code newVel} is null
      */
+    //potevano essere abstract probabilmente, o private / package visible? 
     public void setVelocity(Point newVel) throws NullPointerException {
         this.velocity = newVel;
     }
@@ -135,5 +139,14 @@ public abstract class CelestialBody {
     private boolean repOk() {
         return true;
     }
+
+    /**
+     * return a new copy of this
+     * 
+     * <p> the retured object is a different object with the same name, position and velocity 
+     * as {@code this}
+     * @return the new CelestialBody
+     */
+    public abstract CelestialBody copy();
 
 }
