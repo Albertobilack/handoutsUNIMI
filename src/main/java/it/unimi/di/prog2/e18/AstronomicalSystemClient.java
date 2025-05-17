@@ -20,6 +20,7 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 package it.unimi.di.prog2.e18;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -59,7 +60,19 @@ public class AstronomicalSystemClient {
       sys.step();
     }
     
-    //printo corpi celesti in ordine alfabetico + psoizione + velocità
+    Iterator<CelestialBody> iter = sys.iteratorOrdered();
+    while (iter.hasNext()) {
+      //questo dovrebbe essere il toString
+      // CelestialBody x = iter.next();
+      // if (x instanceof Star) System.out.print("Star, name: ");
+      // if (x instanceof Planet) System.out.print("Planet, name: ");
+      // System.out.print(x.getName() + ", pos: ");
+      // System.out.print(x.getPosition().toString());
+      // if (x instanceof Planet) System.out.print(", vel: " + x.getVelocity().toString());
+      // System.out.println();
+      CelestialBody x = iter.next();
+      System.out.println(x.toString());
+    }
     
     System.out.println("Total Energy: " + Integer.toString(sys.getTotalEnergy()));
   }

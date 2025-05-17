@@ -175,16 +175,20 @@ public class AstronomicalSystem implements Iterable<CelestialBody> {
                 if (cel != celIntern) {
                     if (cel instanceof Planet) {
                         ((Planet)cel).recalculateVelocity(celIntern);
+                        //System.out.println(cel.toString());
                     }
                 }
             }
+            //System.out.println("\n");
         }
 
         for (CelestialBody cel : state) {
             if (cel instanceof Planet) {
                 ((Planet)cel).recalculatePosition();
+                //System.out.println(cel.toString());
             }
         }
+        //System.out.println("\n");
     }
 
     /**
@@ -202,37 +206,49 @@ public class AstronomicalSystem implements Iterable<CelestialBody> {
      
      * @return the generator
      */
-    public Iterator<CelestialBody> iteratorOrdere() {
+    public Iterator<CelestialBody> iteratorOrdered() {
         return new celestialBodyGeneratorOrdered(state);
     }
 
+    //implementazione abbastanza stupida
     /** static inner class implementing the generator */
     private static class celestialBodyGeneratorOrdered implements Iterator<CelestialBody> {
         
         /**the collection of CelestialBody ordered in alphabetical order */
         private List<CelestialBody> stateOrdered;
+        /** index keeping track of the iteration */
+        private int index;
 
         /** create a celestialBodyGeneratorOrdered
          * 
          * @params state the collection representing the unordered astronomical system
          * @throws NullPointerException if {@code state} is null
+         * @throws IllegalArgumentException if {@code state} contains any null value
         */
         private celestialBodyGeneratorOrdered(List<CelestialBody> state) throws NullPointerException {
             List<CelestialBody> temp = new ArrayList<>();
             for (CelestialBody c : state) {
                 temp.add(c);
             }
-            temp.sort(CelestialBody.getName());
-
-             
+            for (CelestialBody c : temp) {
+                Objects.requireNonNull(c);
+            }
+            temp.sort(java.util.Comparator.comparing(CelestialBody::getName)); //da capire cosa fa sta roba
+            stateOrdered = new ArrayList<>(temp);
+            index = 0;
         }
 
+        @Override
         public boolean hasNext() {
-            return true;
+            return (!(index == stateOrdered.size()));
         }
 
+        @Override
         public CelestialBody next() {
-            return null;
+            CelestialBody toRet = stateOrdered.get(index); 
+            index++;
+            return toRet;
+
         }
     }
 
@@ -260,9 +276,17 @@ public class AstronomicalSystem implements Iterable<CelestialBody> {
     // } 
 
     //DA FINIRE: 
-    // IMPLEMENTARE ITERATORE ORDINATO IN ORDINE ALFABETICO? PERCHÉ IL TOSTRING DEVE STAMPARE IN ORDINE ALFABETICO+
+    // IMPLEMENTARE ITERATORE ORDINATO IN ORDINE ALFABETICO? PERCHÉ IL TOSTRING DEVE STAMPARE IN ORDINE ALFABETICO
     // OPPURE UNA CHIAMATA CHE ORDINI L'ARRAYLIST PRIMA DI STAMPARLA IDK PERÒ QUALCOSA DOBBIAMO INVENTARCI
-    
 
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        for (CelestialBody c : state) {
+            str.append(c.toString());
+            str.append("\n");
+        }
+        return str.toString();
+    }
 
 }

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AstronomicalSystemClient",
+            "request": "launch",
+            "mainClass": "it.unimi.di.prog2.e18.AstronomicalSystemClient",
+            "projectName": "handoutsUNIMI"
+        },
+        {
+            "type": "java",
             "name": "HistogramClient",
             "request": "launch",
             "mainClass": "it.unimi.di.prog2.s17.HistogramClient",
